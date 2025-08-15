@@ -9,7 +9,18 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx')),
+    resolve: (name) => {
+        const modules = {
+            ...import.meta.glob('./Admin/Pages/**/*.tsx'),
+            ...import.meta.glob('./Teachers/Pages/**/*.tsx'),
+            ...import.meta.glob('./Students/Pages/**/*.tsx'),
+            ...import.meta.glob('./Web/Pages/**/*.tsx'),
+        };
+        return resolvePageComponent(
+            `./${name}.tsx`,
+            modules
+        );
+    },
     setup({ el, App, props }) {
         const root = createRoot(el!);
         root.render(<App {...props} />);
