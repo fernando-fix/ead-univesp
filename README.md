@@ -9,6 +9,26 @@ Clone Repositório
 git clone https://github.com/fernando-fix/ead-univesp.git
 ```
 
+Entrar na pasta
+
+```sh
+cd ead-univesp
+```
+
+Abrir com vscode
+
+```sh
+code .
+```
+
+Copiar o env
+
+```sh
+cp .env.example .env
+```
+
+Editar o .env se necessário
+
 Suba os containers do projeto
 
 ```sh
@@ -31,10 +51,9 @@ composer install
 Preparar o projeto
 
 ```sh
-npm run build
-cp .env.example .env
 php artisan key:generate
 php artisan migrate
+npm run build
 ```
 
 Acessar o projeto
