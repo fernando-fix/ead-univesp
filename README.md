@@ -73,20 +73,8 @@ Parar os containers
 docker-compose down
 ```
 
-Acessar o container
-
-```sh
-docker-compose exec app bash
-```
-
 Compilar o front end em tempo real
 
 ```sh
 npm run dev
-```
-
-Compilar o front end para produção
-
-```sh
-npm run build
 ```
