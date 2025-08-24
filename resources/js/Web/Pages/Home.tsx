@@ -7,6 +7,7 @@ export default function Home() {
             <Link className="block bg-green-400" href="/teachers">Professores</Link>
             <Link className="block bg-blue-400" href="/students">Estudantes</Link>
             <Link className="block bg-red-400" href="/admin">Administradores</Link>
+            <Link className="block bg-gray-400 mt-4" href={'/login'}>Login</Link>
         </>
     )
 }

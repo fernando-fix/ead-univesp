@@ -1,6 +1,7 @@
 import InputSelect from "@/Shared/Components/Inputs/InputSelect";
 import InputText from "@/Shared/Components/Inputs/InputText";
 import Default from "@/Web/Layouts/Default";
+import { Link } from "@inertiajs/react";
 
 export default function Login() {
 
@@ -25,9 +26,17 @@ export default function Login() {
                             {/* Senha */}
                             <InputText type="password" name="password" label="Senha" placeholder="Digite seu email" autoComplete="current-password" />
 
-                            {/* Botão de login */}
-                            <div className="bg-gray-200">
-                                <button type="submit" className="bg-green-700 hover:bg-green-600 py-1 rounded-md w-1/1 cursor-pointer text-white">Login</button>
+
+                            <div className="flex justify-between gap-2">
+                                {/* Botão voltar */}
+                                <div className="w-1/2">
+                                    <Link href="/" className="block text-center bg-gray-700 hover:bg-gray-600 py-1 rounded-md w-1/1 cursor-pointer text-white">Voltar</Link>
+                                </div>
+
+                                {/* Botão de login */}
+                                <div className="w-1/2">
+                                    <button type="submit" className="bg-green-700 hover:bg-green-600 py-1 rounded-md w-1/1 cursor-pointer text-white">Login</button>
+                                </div>
                             </div>
                         </form>
                     </div>
