@@ -22,3 +22,6 @@ Route::get('/students', function () {
 Route::get('/login', function () {
     return Inertia::render('Web/Pages/Auth/Login');
 });
+Route::post('/login', function (Illuminate\Http\Request $request) {
+    dd($request->all());
+});

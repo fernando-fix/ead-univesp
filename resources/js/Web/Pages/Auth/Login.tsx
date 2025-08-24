@@ -2,6 +2,7 @@ import InputSelect from "@/Shared/Components/Inputs/InputSelect";
 import InputText from "@/Shared/Components/Inputs/InputText";
 import Default from "@/Web/Layouts/Default";
 import { Link } from "@inertiajs/react";
+import InputCSRFToken from "@/Shared/Components/Inputs/InputCSRFToken";
 
 export default function Login() {
 
@@ -13,10 +14,13 @@ export default function Login() {
                         <h2 className="text-3xl mb-4 text-center">Login</h2>
                         <form action="" method="post">
 
+                            {/* CSRF */}
+                            <InputCSRFToken />
+
                             {/* Tipo */}
                             <InputSelect name="type" label="Tipo" options={[
-                                { value: "teacher", label: "Professor" },
                                 { value: "student", label: "Estudante" },
+                                { value: "teacher", label: "Professor" },
                                 { value: "admin", label: "Administrador" },
                             ]} />
 
