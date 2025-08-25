@@ -17,4 +17,14 @@ export default defineConfig({
             '@': '/resources/js',
         },
     },
+    server: {
+        host: true, // bind 0.0.0.0 inside container
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: 'localhost', // browser connects via host-mapped port
+            port: 5173,
+            protocol: 'ws',
+        },
+    },
 });

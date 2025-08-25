@@ -15,11 +15,13 @@ Entrar na pasta
 cd ead-univesp
 ```
 
-Abrir com vscode
+Abrir em uma nova janela do vscode
 
 ```sh
 code .
 ```
+
+Feche a janela anterior e use a janela atual para continuar
 
 Copiar o env
 
@@ -41,10 +43,16 @@ Acessar o container
 docker-compose exec app bash
 ```
 
-Instalar as dependências do projeto
+Instalar as dependências javascript do projeto
 
 ```sh
 npm install
+npm run build
+```
+
+Instalar as dependências php do projeto
+
+```sh
 composer install
 ```
 
@@ -53,7 +61,6 @@ Preparar o projeto
 ```sh
 php artisan key:generate
 php artisan migrate
-npm run build
 ```
 
 Acessar o projeto
@@ -76,5 +83,11 @@ docker-compose down
 Compilar o front end em tempo real
 
 ```sh
-npm run dev
+docker-compose exec app npm run dev
+```
+
+Compilar o front end para produção
+
+```sh
+docker-compose exec app npm run build
 ```
