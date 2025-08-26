@@ -18,13 +18,17 @@ export default defineConfig({
         },
     },
     server: {
-        host: true, // bind 0.0.0.0 inside container
+        host: true,
         port: 5173,
         strictPort: true,
+        watch: {
+            usePolling: true,
+        },
         hmr: {
-            host: 'localhost', // browser connects via host-mapped port
+            host: 'localhost',
             port: 5173,
             protocol: 'ws',
         },
     },
+
 });
